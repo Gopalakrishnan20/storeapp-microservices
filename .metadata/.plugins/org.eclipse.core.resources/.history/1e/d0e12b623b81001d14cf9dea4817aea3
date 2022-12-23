@@ -1,0 +1,19 @@
+package com.gk.service;
+
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.gk.dto.OrderRequest;
+import com.gk.model.Order;
+
+@Service
+public class OrderService {
+	
+	public void placeOrder(OrderRequest orderRequest) {
+		Order order = new Order();
+		order.setOrderNumber(UUID.randomUUID().toString());
+		
+	}
+
+}
