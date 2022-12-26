@@ -1,5 +1,6 @@
 package com.gk.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.gk.dto.InventoryResponse;
 import com.gk.dto.OrderLineItemsDto;
 import com.gk.dto.OrderRequest;
 import com.gk.model.Order;
@@ -29,13 +31,19 @@ public class OrderService {
 		order.setOrderNumber(UUID.randomUUID().toString());
 		List<OrderLineItems> orderLineItems= orderRequest.getOrderLineItemsDto().stream().map(this::mapToDto).toList();
 		order.setOrderLineItems(orderLineItems);
+		List<String> skuCodes=order.getOrderLineItems().stream()
+				.map(OrderLineItems::getSkuCode)
+				.toList();
 		//call Inventory Service, and place order if product is in stock
-		Boolean result=webClient.get()
-				.uri("http://localhost:8081/api/inventory")
+		InventoryResponse[] inventoryResponseArray=webClient.get()
+				.uri("http://localhost:8082/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
 				.retrieve()
-				.bodyToMono(Boolean.class)
+				.bodyToMono(InventoryResponse[].class)
 				.block();
-		if(result) {
+		
+		Boolean allProductsInStock=Arrays.stream(inventoryResponseArray)
+				.allMatch(inventoryResponse->inventoryResponse.getIsInStock());
+		if(allProductsInStock) {
 		orderRepository.save(order);}
 		else {
 			throw new IllegalArgumentException("Product is out of stock right now!");
