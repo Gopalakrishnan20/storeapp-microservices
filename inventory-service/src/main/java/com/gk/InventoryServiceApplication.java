@@ -4,11 +4,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.gk.model.Inventory;
 import com.gk.repository.InventoryRepository;
 
 @SpringBootApplication
+@EnableEurek
+
 public class InventoryServiceApplication {
 
 	public static void main(String[] args) {

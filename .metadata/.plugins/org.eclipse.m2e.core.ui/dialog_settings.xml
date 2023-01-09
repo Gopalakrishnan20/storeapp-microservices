@@ -29,13 +29,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.gk.microservices_store"/>
 		</list>
 		<list key="groupId">
-			<item value="com.gk"/>
 		</list>
 		<list key="artifactId">
-			<item value="microservices-store"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

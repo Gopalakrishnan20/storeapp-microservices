@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.gk.dto.ProductResponse"/>
-    <fullyQualifiedTypeName name="org.testcontainers.junit.jupiter.Testcontainers"/>
     <fullyQualifiedTypeName name="org.testcontainers.containers.MongoDBContainer"/>
     <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc"/>
     <fullyQualifiedTypeName name="net.bytebuddy.utility.dispatcher.JavaDispatcher.Container"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.Builder"/>
     <fullyQualifiedTypeName name="com.gk.dto.InventoryResponse"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.EnableAspectJAutoProxy"/>
 </qualifiedTypeNameHistroy>
