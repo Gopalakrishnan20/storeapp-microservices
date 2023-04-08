@@ -1,0 +1,5 @@
+com\cybertron\inventoryservice\service\InventoryService.class
+com\cybertron\inventoryservice\InventoryServiceApplication.class
+com\cybertron\inventoryservice\repository\InventoryRepository.class
+com\cybertron\inventoryservice\controller\InventoryController.class
+com\cybertron\inventoryservice\model\Inventory.class

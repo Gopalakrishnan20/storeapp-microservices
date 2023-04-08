@@ -1,0 +1,10 @@
+com\cybertron\productservice\controller\ProductController.class
+com\cybertron\productservice\dto\ProductResponse$ProductResponseBuilder.class
+com\cybertron\productservice\dto\ProductRequest.class
+com\cybertron\productservice\model\Product$ProductBuilder.class
+com\cybertron\productservice\repository\ProductRepository.class
+com\cybertron\productservice\dto\ProductResponse.class
+com\cybertron\productservice\model\Product.class
+com\cybertron\productservice\dto\ProductRequest$ProductRequestBuilder.class
+com\cybertron\productservice\service\ProductService.class
+com\cybertron\productservice\ProductServiceApplication.class
